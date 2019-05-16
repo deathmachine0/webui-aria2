@@ -7,8 +7,7 @@ port = process.argv[2] || 8888;
 http
   .createServer(function(request, response) {
     var uri = url.parse(request.url).pathname,
-      filename = path.join(process.cwd(), "docs", uri);
-
+      filename = path.join(__dirname, "docs", uri);
     var extname = path.extname(filename);
     var contentType = "text/html";
     switch (extname) {
